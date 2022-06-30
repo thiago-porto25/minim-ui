@@ -1,4 +1,5 @@
 import Ts from "rollup-plugin-typescript2"
+import css from "rollup-plugin-import-css"
 
 export default {
 	input: ["src/index.ts"],
@@ -7,7 +8,7 @@ export default {
 		format: "esm",
 		sourcemap: true,
 	},
-	plugins: [Ts()],
+	plugins: [Ts(), css()],
 	preserveModules: true,
-	external: ["react"],
+	external: ["react", "styled-components", "normalize.css/normalize.css"],
 }
