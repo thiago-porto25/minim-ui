@@ -83,6 +83,7 @@ export const tokens = {
 		pure: {
 			black: "#000000",
 			white: "#ffffff",
+			transparent: "transparent",
 		},
 		feedback: {
 			red: "#DB3E29",
