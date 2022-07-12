@@ -9,6 +9,7 @@ export interface ButtonProps
 	disabledBgColor?: Colors
 	activeBgColor?: Colors
 	shapedByParent?: boolean
+	large?: boolean
 	w?: Sizes
 	h?: Sizes
 	py?: Sizes

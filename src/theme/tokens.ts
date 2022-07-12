@@ -8,6 +8,7 @@ export const tokens = {
 			max: "1584px",
 		},
 		spacing: {
+			inherit: "inherit",
 			auto: "auto",
 			none: "0",
 			qk: "8px",
