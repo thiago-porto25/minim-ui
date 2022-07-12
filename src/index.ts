@@ -1,4 +1,3 @@
-import { Test } from "./Test"
-import { ChatRandomThemeProvider } from "./components"
+import { ChatRandomThemeProvider, Button } from "./components"
 
-export { Test, ChatRandomThemeProvider }
+export { ChatRandomThemeProvider, Button }
