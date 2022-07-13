@@ -1,3 +1,3 @@
-import { ChatRandomThemeProvider, Button } from "./components"
+import { ChatRandomThemeProvider, Button, Typography } from "./components"
 
-export { ChatRandomThemeProvider, Button }
+export { ChatRandomThemeProvider, Button, Typography }

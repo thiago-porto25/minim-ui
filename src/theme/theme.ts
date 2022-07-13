@@ -51,6 +51,10 @@ export const theme = {
 			fontSize: tokens.typography.fontSize.nn,
 			lineHeight: tokens.typography.lineHeight.sm,
 			color: tokens.colors.action.blue50,
+			cursor: "pointer",
+			"&:hover": {
+				textDecoration: "underline",
+			},
 		},
 		error: {
 			fontFamily: tokens.typography.fontFamily.primary,
