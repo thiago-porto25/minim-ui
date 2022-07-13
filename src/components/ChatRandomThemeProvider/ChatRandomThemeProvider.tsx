@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components"
 
 import "normalize.css/normalize.css"
 import "../../theme/reset.css"
+import "../../theme/fonts.css"
 
 import { theme as DefaultTheme } from "../../theme"
 

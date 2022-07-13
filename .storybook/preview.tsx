@@ -1,3 +1,4 @@
+import React from "react"
 import { ChatRandomThemeProvider } from "../src"
 
 import "normalize.css/normalize.css"
