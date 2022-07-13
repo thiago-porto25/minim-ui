@@ -50,3 +50,9 @@ LargeDisabled.args = {
 	large: true,
 	disabled: true,
 }
+
+export const Ripple: Story<ButtonProps> = Template.bind({})
+Ripple.args = {
+	large: true,
+	ripple: true,
+}

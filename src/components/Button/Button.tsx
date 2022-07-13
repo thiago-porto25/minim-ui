@@ -6,6 +6,7 @@ import {
 	shapedByParentHelper,
 	simpleTransitionHelper,
 } from "../../helpers"
+import { rippleHelper } from "../../helpers/ripple.helper"
 
 export const Button = styled.button<ButtonProps>`
 	${({
@@ -18,9 +19,10 @@ export const Button = styled.button<ButtonProps>`
 		radius = "md",
 		bgColor = "blue50",
 		hoverBgColor = "blue40",
-		activeBgColor = "blue40",
+		activeBgColor = "blue30",
 		disabledBgColor = "blue50",
 		shapedByParent = false,
+		ripple = false,
 	}) => css`
 		height: ${theme.base.spacing[h]};
 		width: ${theme.base.spacing[w]};
@@ -45,8 +47,14 @@ export const Button = styled.button<ButtonProps>`
 			cursor: auto;
 		}
 
-		${large ? theme.textStyles.buttonLg : theme.textStyles.buttonSm}
 		${simpleTransitionHelper("background-color")}
 		${shapedByParentHelper(shapedByParent)}
+		${large ? theme.textStyles.buttonLg : theme.textStyles.buttonSm}
+		${ripple
+			? rippleHelper(
+					parseColorHelper(hoverBgColor),
+					parseColorHelper(activeBgColor)
+			  )
+			: ""}
 	`};
 `
