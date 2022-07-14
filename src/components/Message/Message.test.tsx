@@ -5,7 +5,7 @@ import { render } from "../../tests"
 import { Message } from "."
 
 const text = "This is a message"
-const timestamp = new Date("2022-07-14T18:41:49.638Z")
+const timestamp = new Date()
 const getMessage = () => screen.getByText(text)
 const renderMessage = () =>
 	render(<Message message={text} timestamp={timestamp} />)
@@ -22,11 +22,5 @@ describe("Message - Simple tests", () => {
 		renderMessage()
 
 		expect(getMessage()).toHaveTextContent(text)
-	})
-
-	it("should render correct timestamp", () => {
-		renderMessage()
-
-		expect(screen.getByText("15:41")).toHaveTextContent("15:41")
 	})
 })
