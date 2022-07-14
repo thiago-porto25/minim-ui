@@ -91,6 +91,13 @@ export const theme = {
 			lineHeight: tokens.typography.lineHeight.sm,
 			color: tokens.colors.brand.gray40,
 		},
+		timestamp: {
+			fontFamily: tokens.typography.fontFamily.primary,
+			fontWeight: tokens.typography.fontWeight.regular,
+			fontSize: tokens.typography.fontSize.qk,
+			lineHeight: tokens.typography.lineHeight.sm,
+			color: tokens.colors.brand.gray40,
+		},
 	},
 	foundations: {
 		bg: {
