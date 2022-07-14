@@ -7,6 +7,7 @@ import { Typography } from "."
 
 const text = "Hello World"
 
+// --------------- SIMPLE TESTS ---------------
 describe("Typography - Simple tests", () => {
 	it("should render correctly", () => {
 		render(<Typography>{text}</Typography>)
@@ -35,6 +36,7 @@ describe("Typography - Simple tests", () => {
 	})
 })
 
+// --------------- STYLE TESTS ---------------
 describe("Typography - Styles tests", () => {
 	it("should render correctly with error textStyle", () => {
 		render(<Typography textStyle="error">{text}</Typography>)
