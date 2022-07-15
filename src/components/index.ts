@@ -1,4 +1,6 @@
+export { Avatar } from "./Avatar"
 export { Button } from "./Button"
 export { ChatRandomThemeProvider } from "./ChatRandomThemeProvider"
 export { Logo } from "./Logo"
+export { Message } from "./Message"
 export { Typography } from "./Typography"
