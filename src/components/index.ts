@@ -1,6 +1,8 @@
 export { Avatar } from "./Avatar"
 export { Button } from "./Button"
 export { ChatRandomThemeProvider } from "./ChatRandomThemeProvider"
+export { Container } from "./Container"
+export { Loading } from "./Loading"
 export { Logo } from "./Logo"
 export { Message } from "./Message"
 export { Typography } from "./Typography"
