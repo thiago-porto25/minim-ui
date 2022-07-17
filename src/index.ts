@@ -1,4 +1,5 @@
 import {
+	ChatInput,
 	ChatRandomThemeProvider,
 	Container,
 	Button,
@@ -10,6 +11,7 @@ import {
 } from "./components"
 
 export {
+	ChatInput,
 	ChatRandomThemeProvider,
 	Container,
 	Button,

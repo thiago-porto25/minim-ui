@@ -1,5 +1,6 @@
 export { Avatar } from "./Avatar"
 export { Button } from "./Button"
+export { ChatInput } from "./ChatInput"
 export { ChatRandomThemeProvider } from "./ChatRandomThemeProvider"
 export { Container } from "./Container"
 export { Loading } from "./Loading"

@@ -1,7 +1,7 @@
 import React from "react"
 import { screen } from "@testing-library/react"
 
-import { render } from "../../tests"
+import { render } from "../../test-utils"
 import { Container, ContainerProps } from "."
 import { theme } from "../../theme"
 

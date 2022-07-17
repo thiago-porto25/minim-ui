@@ -1,3 +1,5 @@
 export { shapedByParentHelper } from "./shapedByParent.helper"
 export { simpleTransitionHelper } from "./simpleTransition.helper"
 export { parseColorHelper } from "./parseColor.helper"
+export { removeScrollbarHelper } from "./removeScrollbar.helper"
+export { rippleHelper } from "./ripple.helper"
