@@ -12,6 +12,7 @@ export const Avatar = styled.img.attrs(({ src }) => ({
 		height: ${theme.base.spacing[smSize]};
 		width: ${theme.base.spacing[smSize]};
 		border-radius: ${theme.base.borderRadius.round};
+		object-fit: cover;
 
 		@media (min-width: ${theme.base.breakpoints.md}) {
 			height: ${theme.base.spacing[mdSize]};

@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react"
 import { Avatar, AvatarProps } from "."
 
 const avatarSrc =
-	"https://lh3.googleusercontent.com/a-/AFdZuco9g5GQ2E-_2ia2va4ECEc99z3liQQQwN1ff82_=s83-c-mo"
+	"https://c.pxhere.com/photos/50/77/business_meeting_people_corporate_success_person_professional-893119.jpg!d"
 
 const meta: Meta = {
 	title: "Components/Avatar",
