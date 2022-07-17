@@ -5,7 +5,6 @@ export const tokens = {
 			md: "672px",
 			lg: "1024px",
 			xl: "1312px",
-			max: "1584px",
 		},
 		spacing: {
 			inherit: "inherit",

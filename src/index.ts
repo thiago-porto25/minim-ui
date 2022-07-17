@@ -8,6 +8,7 @@ import {
 	Logo,
 	Avatar,
 	Message,
+	Spacer,
 } from "./components"
 
 export {
@@ -20,4 +21,5 @@ export {
 	Logo,
 	Avatar,
 	Message,
+	Spacer,
 }
