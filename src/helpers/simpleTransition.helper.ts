@@ -1,9 +1,21 @@
 import { css, FlattenSimpleInterpolation } from "styled-components"
 
-export const simpleTransitionHelper = (
-	property: string
-): FlattenSimpleInterpolation => {
+function argsMap(...args: string[]): string {
+	let result = ""
+
+	args.forEach((arg, index) => {
+		if (index === args.length - 1) return (result += `${arg} 0.3s ease-in-out`)
+
+		return (result += `${arg} 0.3s ease-in-out, `)
+	})
+
+	return result
+}
+
+function simpleTransitionHelper(...args: string[]): FlattenSimpleInterpolation {
 	return css`
-		transition: ${property} 0.3s ease-in-out;
+		transition: ${argsMap(...args)};
 	`
 }
+
+export { simpleTransitionHelper }

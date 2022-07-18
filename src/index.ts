@@ -9,6 +9,7 @@ import {
 	Avatar,
 	Message,
 	Spacer,
+	Input,
 } from "./components"
 
 export {
@@ -22,4 +23,5 @@ export {
 	Avatar,
 	Message,
 	Spacer,
+	Input,
 }
