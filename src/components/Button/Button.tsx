@@ -6,7 +6,7 @@ import {
 	shapedByParentHelper,
 	simpleTransitionHelper,
 } from "../../helpers"
-import { rippleHelper } from "../../helpers/ripple.helper"
+import { rippleHelper } from "../../helpers"
 
 export const Button = styled.button<ButtonProps>`
 	${({

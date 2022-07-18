@@ -1,4 +1,5 @@
 import {
+	ChatInput,
 	ChatRandomThemeProvider,
 	Container,
 	Button,
@@ -7,9 +8,12 @@ import {
 	Logo,
 	Avatar,
 	Message,
+	Spacer,
+	Input,
 } from "./components"
 
 export {
+	ChatInput,
 	ChatRandomThemeProvider,
 	Container,
 	Button,
@@ -18,4 +22,6 @@ export {
 	Logo,
 	Avatar,
 	Message,
+	Spacer,
+	Input,
 }
