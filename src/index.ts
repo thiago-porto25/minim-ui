@@ -10,6 +10,8 @@ import {
 	Message,
 	Spacer,
 	Input,
+	Popup,
+	PopupItem,
 } from "./components"
 
 export {
@@ -24,4 +26,6 @@ export {
 	Message,
 	Spacer,
 	Input,
+	Popup,
+	PopupItem,
 }
