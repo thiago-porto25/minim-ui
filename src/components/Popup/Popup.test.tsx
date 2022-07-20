@@ -15,7 +15,9 @@ describe("Popup - Simple tests", () => {
 		render(
 			<>
 				<div data-testid="div"></div>
-				<Popup setOpen={setOpen}>{text}</Popup>
+				<Popup isOpen={true} close={setOpen}>
+					{text}
+				</Popup>
 			</>
 		)
 
@@ -31,7 +33,7 @@ describe("Popup - Simple tests", () => {
 		expect(getPopup()).toHaveTextContent(text)
 	})
 
-	it("should call setOpen function on a click to close the popup", async () => {
+	it("should call close function on a click to close the popup", async () => {
 		renderPurePopup()
 
 		const div = screen.getByTestId("div")

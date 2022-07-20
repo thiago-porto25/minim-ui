@@ -16,11 +16,10 @@ const Template: Story<PopupProps> = (args) => {
 	return (
 		<div style={{ position: "relative" }}>
 			<Button onClick={() => setOpen(true)}>Open Popup</Button>
-			{open && (
-				<Popup {...args} setOpen={setOpen}>
-					<PopupItem text="Logout" />
-				</Popup>
-			)}
+
+			<Popup {...args} isOpen={open} close={setOpen}>
+				<PopupItem text="Logout" onClick={() => console.log("clicked")} />
+			</Popup>
 		</div>
 	)
 }

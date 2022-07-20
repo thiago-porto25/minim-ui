@@ -2,7 +2,8 @@ import { AnimationOptions } from "../../types/animationOptions.interface"
 import { Sizes } from "../../types/sizes.interface"
 
 export interface PopupProps extends React.PropsWithChildren {
-	setOpen: React.Dispatch<React.SetStateAction<boolean>>
+	isOpen: boolean
+	close: React.Dispatch<React.SetStateAction<boolean>>
 	x?: Sizes
 	y?: Sizes
 	animationOptions?: AnimationOptions

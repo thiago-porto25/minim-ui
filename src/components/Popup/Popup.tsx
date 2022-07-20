@@ -1,41 +1,30 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect } from "react"
 import { PopupProps, PopupItemProps } from "."
 import { StyledPopup, StyledPopupItem } from "./styles"
 import { Typography } from "../Typography"
 
 export const Popup: React.FC<PopupProps> = ({
-	setOpen,
+	isOpen,
+	close,
 	x = "qk",
 	y = "xxs",
 	animationOptions = { duration: 150, easing: "linear", type: "fade" },
 	children,
 }) => {
-	const ref = useRef<HTMLDivElement>(null)
-
 	useEffect(() => {
-		function handleClickOutside(event: MouseEvent) {
-			if (ref.current && !ref.current.contains(event.target as Node)) {
-				setOpen(false)
-			}
-		}
+		const handleClick = () => setTimeout(() => close(false), 0)
 
-		document.addEventListener("mousedown", handleClickOutside)
+		if (isOpen) document.addEventListener("mouseup", handleClick)
 		return () => {
-			document.removeEventListener("mousedown", handleClickOutside)
+			document.removeEventListener("mouseup", handleClick)
 		}
-	}, [ref])
+	}, [isOpen])
 
-	return (
-		<StyledPopup
-			role="menu"
-			ref={ref}
-			x={x}
-			y={y}
-			animationOptions={animationOptions}
-		>
+	return isOpen ? (
+		<StyledPopup role="menu" x={x} y={y} animationOptions={animationOptions}>
 			{children}
 		</StyledPopup>
-	)
+	) : null
 }
 
 export const PopupItem: React.FC<PopupItemProps> = ({ text, ...props }) => {
