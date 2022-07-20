@@ -134,8 +134,7 @@ export const theme = {
 		},
 		alert: {
 			error: tokens.colors.feedback.red,
-			problem: tokens.colors.feedback.orange,
-			caution: tokens.colors.feedback.yellow,
+			warning: tokens.colors.feedback.orange,
 			success: tokens.colors.feedback.green,
 		},
 		button: {

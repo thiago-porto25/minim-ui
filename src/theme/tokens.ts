@@ -25,6 +25,7 @@ export const tokens = {
 			uul: "104px",
 			uuul: "112px",
 			sl: "232px",
+			ssl: "256px",
 			o: "288px",
 		},
 		borderRadius: {

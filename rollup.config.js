@@ -13,6 +13,7 @@ export default {
 	preserveModules: true,
 	external: [
 		"react",
+		"react-dom",
 		"styled-components",
 		"normalize.css/normalize.css",
 		"dayjs",
