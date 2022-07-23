@@ -56,3 +56,15 @@ Ripple.args = {
 	large: true,
 	ripple: true,
 }
+
+export const NewChat: Story<ButtonProps> = Template.bind({})
+NewChat.args = {
+	w: "uul",
+	h: "xxs",
+	py: "qk",
+	px: "xxs",
+	bgColor: "gray100",
+	disabledBgColor: "gray100",
+	hoverBgColor: "gray80",
+	activeBgColor: "gray80",
+}
