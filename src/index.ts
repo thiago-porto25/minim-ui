@@ -13,6 +13,8 @@ import {
 	Input,
 	Popup,
 	PopupItem,
+	Modal,
+	ModalContent,
 } from "./components"
 
 export {
@@ -30,4 +32,6 @@ export {
 	Input,
 	Popup,
 	PopupItem,
+	Modal,
+	ModalContent,
 }

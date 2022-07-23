@@ -2,7 +2,7 @@ export const tokens = {
 	base: {
 		breakpoints: {
 			sm: "320px",
-			md: "672px",
+			md: "640px",
 			lg: "1024px",
 			xl: "1312px",
 		},
@@ -27,6 +27,8 @@ export const tokens = {
 			sl: "232px",
 			ssl: "256px",
 			o: "288px",
+			oo: "320px",
+			ooo: "480px",
 		},
 		borderRadius: {
 			none: "0",
