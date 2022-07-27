@@ -38,6 +38,7 @@ export const Modal: React.FC<ModalProps> = ({
 	return isOpen ? (
 		<ModalContainer
 			role="dialog"
+			aria-label="modal"
 			animationOptions={newAnimationOptions}
 			backdropOptions={newBackdropOptions}
 			onClick={closeModal}

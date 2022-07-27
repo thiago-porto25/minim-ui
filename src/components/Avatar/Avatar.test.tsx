@@ -1,5 +1,6 @@
 import React from "react"
 import { screen } from "@testing-library/react"
+import { axe } from "jest-axe"
 
 import { render } from "../../test-utils"
 import { tokens } from "../../theme"
@@ -13,6 +14,7 @@ const renderAvatar = (props?: AvatarProps) =>
 			mdSize={props?.lgSize || "xxs"}
 			smSize={props?.lgSize || "xxs"}
 			src={String(props?.src)}
+			alt="Avatar Image"
 		/>
 	)
 
@@ -28,6 +30,12 @@ describe("Avatar - simple tests", () => {
 		renderAvatar({ src: "https://example.com/avatar.png" })
 
 		expect(getAvatar()).toBeInTheDocument()
+	})
+
+	it("should not have basic accessibility issues", async () => {
+		const { container } = renderAvatar()
+		const results = await axe(container)
+		expect(results).toHaveNoViolations()
 	})
 })
 

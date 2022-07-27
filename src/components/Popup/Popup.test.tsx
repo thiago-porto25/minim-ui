@@ -4,6 +4,7 @@ import userEvent from "@testing-library/user-event"
 
 import { render } from "../../test-utils"
 import { Popup, PopupItem } from "."
+import { axe } from "jest-axe"
 
 const text = "This is a Popup"
 
@@ -16,7 +17,7 @@ describe("Popup - Simple tests", () => {
 			<>
 				<div data-testid="div"></div>
 				<Popup isOpen={true} close={setOpen}>
-					{text}
+					<PopupItem onClick={jest.fn} text={text} />
 				</Popup>
 			</>
 		)
@@ -41,13 +42,24 @@ describe("Popup - Simple tests", () => {
 
 		expect(setOpen).toHaveBeenCalled()
 	})
+
+	it("should not have basic accessibility issues", async () => {
+		const { container } = renderPurePopup()
+
+		const results = await axe(container)
+		expect(results).toHaveNoViolations()
+	})
 })
 
 describe("PopupItem - Simple tests", () => {
 	const onClick = jest.fn()
 	const getPopupItem = () => screen.getByText(text)
 	const renderPopupItem = () =>
-		render(<PopupItem onClick={onClick} text={text} />)
+		render(
+			<Popup isOpen={true} close={jest.fn}>
+				<PopupItem onClick={onClick} text={text} />
+			</Popup>
+		)
 
 	it("should render correctly", () => {
 		renderPopupItem()
@@ -67,5 +79,12 @@ describe("PopupItem - Simple tests", () => {
 		await userEvent.click(getPopupItem())
 
 		expect(onClick).toHaveBeenCalled()
+	})
+
+	it("should not have basic accessibility issues", async () => {
+		const { container } = renderPopupItem()
+
+		const results = await axe(container)
+		expect(results).toHaveNoViolations()
 	})
 })

@@ -4,6 +4,7 @@ import { screen } from "@testing-library/react"
 import { render } from "../../test-utils"
 import { theme } from "../../theme"
 import { Logo } from "."
+import { axe } from "jest-axe"
 
 const getLogo = () => screen.getByRole("img")
 
@@ -22,6 +23,18 @@ describe("Logo - Simple tests", () => {
 
 		expect(getLogoLink()).toBeInTheDocument()
 		expect(getLogoLink()).toHaveAttribute("href", "#test")
+	})
+
+	it("should not have basic accessibility issues when icon", async () => {
+		const { container } = render(<Logo />)
+		const results = await axe(container)
+		expect(results).toHaveNoViolations()
+	})
+
+	it("should not have basic accessibility issues when link", async () => {
+		const { container } = render(<Logo linkTo="/" />)
+		const results = await axe(container)
+		expect(results).toHaveNoViolations()
 	})
 })
 

@@ -4,6 +4,7 @@ import userEvent from "@testing-library/user-event"
 
 import { render } from "../../test-utils"
 import { Modal, ModalContent } from "."
+import { axe } from "jest-axe"
 
 const btnText = "Open Modal"
 const message = "This is a message for a Modal component"
@@ -70,5 +71,16 @@ describe("Modal - Simple Tests", () => {
 		const messageElem = await screen.findByText(message)
 
 		expect(messageElem).toHaveTextContent(message)
+	})
+
+	it("should not have basic accessibility issues", async () => {
+		const { container } = render(<MockComponent />)
+
+		const results = await axe(container)
+		expect(results).toHaveNoViolations()
+
+		await userEvent.click(getOpen())
+		const results2 = await axe(container)
+		expect(results2).toHaveNoViolations()
 	})
 })

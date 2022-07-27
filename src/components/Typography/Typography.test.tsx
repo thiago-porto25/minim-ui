@@ -4,6 +4,7 @@ import { screen } from "@testing-library/react"
 import { render } from "../../test-utils"
 import { theme } from "../../theme"
 import { Typography } from "."
+import { axe } from "jest-axe"
 
 const text = "Hello World"
 
@@ -33,6 +34,13 @@ describe("Typography - Simple tests", () => {
 		)
 
 		expect(screen.getByRole("link")).toBeInTheDocument()
+	})
+
+	it("should not have basic accessibility issues", async () => {
+		const { container } = render(<Typography>{text}</Typography>)
+
+		const results = await axe(container)
+		expect(results).toHaveNoViolations()
 	})
 })
 

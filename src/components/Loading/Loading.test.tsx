@@ -4,6 +4,7 @@ import { screen } from "@testing-library/react"
 
 import { render } from "../../test-utils"
 import { Loading, LoadingProps } from "."
+import { axe } from "jest-axe"
 
 const getLoading = () => screen.getByTitle("Loading")
 const renderLoading = (props?: LoadingProps) =>
@@ -39,5 +40,11 @@ describe("Loading - simple tests", () => {
 		renderLoading({ dots: 8 })
 
 		expect(getLoading().children).toHaveLength(8)
+	})
+
+	it("should not have basic accessibility issues", async () => {
+		const { container } = renderLoading()
+		const results = await axe(container)
+		expect(results).toHaveNoViolations()
 	})
 })
