@@ -7,13 +7,13 @@ Minim UI is a React Component Library for faster UI development using easy and r
 To install Minim UI use the package manager (npm) that comes with [nodeJS](https://nodejs.org/en/download/).
 
 ```bash
-npm install minim-ui
+npm install @thiagoporto/minim-ui
 ```
 
 or
 
 ```bash
-yarn add minim-ui
+yarn add @thiagoporto/minim-ui
 ```
 
 ## Usage
@@ -25,7 +25,7 @@ In your React app, import `MinimThemeProvider` and wrap it around your `App` com
 import React from "react"
 import ReactDOM from "react-dom/client"
 import App from "./App"
-import { MinimThemeProvider } from "minim-ui"
+import { MinimThemeProvider } from "@thiagoporto/minim-ui"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
@@ -41,7 +41,7 @@ After that you can start importing our components and use them in your files.
 
 ```jsx
 // ExampleComponent.tsx
-import { Button, Typography, Spacer } from "minim-ui"
+import { Button, Typography, Spacer } from "@thiagoporto/minim-ui"
 
 export const ExampleComponent: React.FC = () => (
 	<div>

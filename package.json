@@ -1,5 +1,5 @@
 {
-	"name": "minim-ui",
+	"name": "@thiagoporto/minim-ui",
 	"version": "0.1.0",
 	"description": "A component library made for the Chat Random web app. It follows a custom design system made by the creator.",
 	"keywords": [
