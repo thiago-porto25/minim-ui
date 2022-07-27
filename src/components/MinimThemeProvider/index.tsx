@@ -1,0 +1,1 @@
+export { MinimThemeProvider } from "./MinimThemeProvider"
