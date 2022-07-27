@@ -4,6 +4,7 @@ import { screen } from "@testing-library/react"
 import { render } from "../../test-utils"
 import { tokens } from "../../theme"
 import { Button } from "./Button"
+import { axe } from "jest-axe"
 
 const text = "Button"
 
@@ -19,6 +20,12 @@ describe("Button - simple tests", () => {
 		render(<Button>{text}</Button>)
 
 		expect(screen.getByText(text)).toBeInTheDocument()
+	})
+
+	it("should not have basic accessibility issues", async () => {
+		const { container } = render(<Button>{text}</Button>)
+		const results = await axe(container)
+		expect(results).toHaveNoViolations()
 	})
 })
 

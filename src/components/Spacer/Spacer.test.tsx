@@ -4,6 +4,7 @@ import { screen } from "@testing-library/react"
 import { render } from "../../test-utils"
 import { Spacer } from "."
 import { theme } from "../../theme"
+import { axe } from "jest-axe"
 
 const getSpacer = () => screen.getByTestId("Spacer")
 
@@ -31,6 +32,15 @@ describe("Spacer - simple tests", () => {
 		)
 
 		expect(getSpacer()).toBeInTheDocument()
+	})
+
+	it("should not have basic accessibility issues", async () => {
+		const { container } = render(
+			<Spacer variant="inline" size={{ sm: "md", md: "md", lg: "md" }} />
+		)
+
+		const results = await axe(container)
+		expect(results).toHaveNoViolations()
 	})
 })
 

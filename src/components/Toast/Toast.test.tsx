@@ -5,6 +5,7 @@ import userEvent from "@testing-library/user-event"
 import { render } from "../../test-utils"
 import { Toast, ToastProps } from "."
 import { theme } from "../../theme"
+import { axe } from "jest-axe"
 
 const btnText = "Open Toast"
 const message = "This is a message for a toast component"
@@ -91,6 +92,33 @@ describe("Toast - Simple Tests", () => {
 		const messageElem = await screen.findByText(message)
 
 		expect(messageElem).toHaveTextContent(message)
+	})
+
+	it("should not have basic accessibility issues when type is error", async () => {
+		const { container } = render(<MockComponent type="error" />)
+
+		await userEvent.click(getOpen())
+
+		const results = await axe(container)
+		expect(results).toHaveNoViolations()
+	})
+
+	it("should not have basic accessibility issues when type is warning", async () => {
+		const { container } = render(<MockComponent type="warning" />)
+
+		await userEvent.click(getOpen())
+
+		const results = await axe(container)
+		expect(results).toHaveNoViolations()
+	})
+
+	it("should not have basic accessibility issues when type is success", async () => {
+		const { container } = render(<MockComponent type="success" />)
+
+		await userEvent.click(getOpen())
+
+		const results = await axe(container)
+		expect(results).toHaveNoViolations()
 	})
 })
 

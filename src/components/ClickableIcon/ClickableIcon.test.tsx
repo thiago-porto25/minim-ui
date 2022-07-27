@@ -4,6 +4,7 @@ import { screen } from "@testing-library/react"
 import { render } from "../../test-utils"
 import { ClickableIcon, ClickableIconProps } from "."
 import { theme } from "../../theme"
+import { axe } from "jest-axe"
 
 const svgTitle = "I am svg"
 
@@ -53,6 +54,12 @@ describe("ClickableIcon - simple tests", () => {
 
 		expect(getSvg()).toBeInTheDocument()
 		expect(getClickableIcon()).toBeInTheDocument()
+	})
+
+	it("should not have basic accessibility issues", async () => {
+		const { container } = renderClickableIcon()
+		const results = await axe(container)
+		expect(results).toHaveNoViolations()
 	})
 })
 

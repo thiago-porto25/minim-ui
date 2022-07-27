@@ -4,6 +4,7 @@ import { screen } from "@testing-library/react"
 import { render } from "../../test-utils"
 import { Container, ContainerProps } from "."
 import { theme } from "../../theme"
+import { axe } from "jest-axe"
 
 const getContainer = () => screen.getByTestId("container")
 const renderContainer = (props?: ContainerProps) =>
@@ -32,6 +33,12 @@ describe("Container - simple tests", () => {
 
 		expect(getContainer()).toBeInTheDocument()
 	})
+
+	it("should not have basic accessibility issues", async () => {
+		const { container } = renderContainer()
+		const results = await axe(container)
+		expect(results).toHaveNoViolations()
+	})
 })
 
 // --------------- STYLE TESTS ---------------
@@ -45,10 +52,10 @@ describe("Container - style tests", () => {
 	})
 
 	it("should have max width equal to what was passed through props", () => {
-		renderContainer({ maxW: "max" })
+		renderContainer({ maxW: "xl" })
 
 		expect(getContainer()).toHaveStyle({
-			maxWidth: theme.base.breakpoints.max,
+			maxWidth: theme.base.breakpoints.xl,
 		})
 	})
 })

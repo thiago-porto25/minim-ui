@@ -5,6 +5,7 @@ import userEvent from "@testing-library/user-event"
 import { render } from "../../test-utils"
 import { ChatInput, ChatInputProps } from "."
 import { theme } from "../../theme"
+import { axe } from "jest-axe"
 
 const onChange = jest.fn()
 const getChatInput = () => screen.getByPlaceholderText("ChatInput")
@@ -33,6 +34,12 @@ describe("ChatInput - simple tests", () => {
 		await userEvent.type(chatInput, "test")
 
 		expect(onChange).toHaveBeenCalledTimes(4)
+	})
+
+	it("should not have basic accessibility issues", async () => {
+		const { container } = renderChatInput()
+		const results = await axe(container)
+		expect(results).toHaveNoViolations()
 	})
 })
 

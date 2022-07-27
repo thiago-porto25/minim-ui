@@ -3,6 +3,7 @@ import { screen } from "@testing-library/react"
 
 import { render } from "../../test-utils"
 import { Message } from "."
+import { axe } from "jest-axe"
 
 const text = "This is a message"
 const timestamp = new Date()
@@ -22,5 +23,11 @@ describe("Message - Simple tests", () => {
 		renderMessage()
 
 		expect(getMessage()).toHaveTextContent(text)
+	})
+
+	it("should not have basic accessibility issues", async () => {
+		const { container } = renderMessage()
+		const results = await axe(container)
+		expect(results).toHaveNoViolations()
 	})
 })

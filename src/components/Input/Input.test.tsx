@@ -5,6 +5,7 @@ import userEvent from "@testing-library/user-event"
 import { render } from "../../test-utils"
 import { Input, InputProps } from "."
 import { theme } from "../../theme"
+import { axe } from "jest-axe"
 
 const onChange = jest.fn()
 const getInput = () => screen.getByPlaceholderText("Input")
@@ -33,6 +34,12 @@ describe("Input - simple tests", () => {
 		await userEvent.type(Input, "test")
 
 		expect(onChange).toHaveBeenCalledTimes(4)
+	})
+
+	it("should not have basic accessibility issues", async () => {
+		const { container } = renderInput()
+		const results = await axe(container)
+		expect(results).toHaveNoViolations()
 	})
 })
 
