@@ -14,6 +14,6 @@ const toastPortal = document.createElement("div")
 toastPortal.id = "toast"
 document.body.appendChild(toastPortal)
 
-export const ChatRandomThemeProvider: React.FC<Props> = ({ children }) => {
+export const MinimThemeProvider: React.FC<Props> = ({ children }) => {
 	return <ThemeProvider theme={DefaultTheme}>{children}</ThemeProvider>
 }

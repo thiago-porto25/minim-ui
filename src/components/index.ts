@@ -1,7 +1,7 @@
 export { Avatar } from "./Avatar"
 export { Button } from "./Button"
 export { ChatInput } from "./ChatInput"
-export { ChatRandomThemeProvider } from "./ChatRandomThemeProvider"
+export { MinimThemeProvider } from "./MinimThemeProvider"
 export { ClickableIcon } from "./ClickableIcon"
 export { Container } from "./Container"
 export { Input } from "./Input"

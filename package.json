@@ -1,84 +1,96 @@
 {
-  "name": "@thiago-chat-random/components",
-  "version": "1.0.0",
-  "description": "A component library made for the Chat Random web app.",
-  "main": "dist/index.js",
-  "author": "Thiago Porto",
-  "license": "MIT",
-  "private": false,
-  "scripts": {
-    "build": "rollup -c",
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
-    "lint": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
-    "test": "jest --coverage --verbose",
-    "commit": "yarn git-cz",
-    "prepare": "husky install",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.18.6",
-    "@babel/preset-env": "^7.18.6",
-    "@babel/preset-react": "^7.18.6",
-    "@babel/preset-typescript": "^7.18.6",
-    "@commitlint/cli": "^17.0.3",
-    "@commitlint/config-conventional": "^17.0.3",
-    "@rollup/plugin-image": "^2.1.1",
-    "@storybook/addon-a11y": "^6.5.9",
-    "@storybook/addon-actions": "^6.5.9",
-    "@storybook/addon-essentials": "^6.5.9",
-    "@storybook/addon-interactions": "^6.5.9",
-    "@storybook/addon-links": "^6.5.9",
-    "@storybook/builder-webpack4": "^6.5.9",
-    "@storybook/manager-webpack4": "^6.5.9",
-    "@storybook/react": "^6.5.9",
-    "@storybook/testing-library": "^0.0.13",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^14.2.1",
-    "@types/jest": "^28.1.3",
-    "@types/jest-axe": "^3.5.4",
-    "@types/styled-components": "^5.1.25",
-    "@typescript-eslint/eslint-plugin": "^5.30.0",
-    "@typescript-eslint/parser": "^5.30.0",
-    "babel-loader": "^8.2.5",
-    "commitizen": "^4.2.4",
-    "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.18.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-jest-dom": "^4.0.2",
-    "eslint-plugin-react": "^7.30.1",
-    "eslint-plugin-storybook": "^0.5.13",
-    "eslint-plugin-testing-library": "^5.5.1",
-    "husky": "^8.0.0",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^28.1.2",
-    "jest-axe": "^6.0.0",
-    "jest-environment-jsdom": "^28.1.2",
-    "lint-staged": "^13.0.3",
-    "normalize.css": "^8.0.1",
-    "prettier": "^2.7.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.4.0",
-    "rollup": "^2.75.7",
-    "rollup-plugin-typescript2": "^0.32.1",
-    "styled-components": "^5.3.5",
-    "typescript": "^4.7.4"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
-  "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": [
-      "prettier --write",
-      "eslint --fix"
-    ]
-  },
-  "dependencies": {
-    "dayjs": "^1.11.3",
-    "rollup-plugin-import-css": "^3.0.3"
-  }
+	"name": "random-components",
+	"version": "0.1.0",
+	"description": "A component library made for the Chat Random web app. It follows a custom design system made by the creator.",
+	"keywords": [
+		"design system",
+		"component library",
+		"chat random",
+		"react",
+		"styled-components",
+		"component lib",
+		"themes",
+		"components"
+	],
+	"homepage": "https://github.com/thiago-porto25/chat-random-components",
+	"bugs": "https://github.com/thiago-porto25/chat-random-components/issues",
+	"main": "dist/index.js",
+	"author": "Thiago Porto <thiago_porto25@hotmail.com> (http://thiagoporto.tech)",
+	"license": "MIT",
+	"private": false,
+	"scripts": {
+		"build": "rollup -c",
+		"format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
+		"lint": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
+		"test": "jest --coverage --verbose",
+		"commit": "yarn git-cz",
+		"prepare": "husky install",
+		"storybook": "start-storybook -p 6006",
+		"build-storybook": "build-storybook"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.18.6",
+		"@babel/preset-env": "^7.18.6",
+		"@babel/preset-react": "^7.18.6",
+		"@babel/preset-typescript": "^7.18.6",
+		"@commitlint/cli": "^17.0.3",
+		"@commitlint/config-conventional": "^17.0.3",
+		"@rollup/plugin-image": "^2.1.1",
+		"@storybook/addon-a11y": "^6.5.9",
+		"@storybook/addon-actions": "^6.5.9",
+		"@storybook/addon-essentials": "^6.5.9",
+		"@storybook/addon-interactions": "^6.5.9",
+		"@storybook/addon-links": "^6.5.9",
+		"@storybook/builder-webpack4": "^6.5.9",
+		"@storybook/manager-webpack4": "^6.5.9",
+		"@storybook/react": "^6.5.9",
+		"@storybook/testing-library": "^0.0.13",
+		"@testing-library/jest-dom": "^5.16.4",
+		"@testing-library/react": "^13.3.0",
+		"@testing-library/user-event": "^14.2.1",
+		"@types/jest": "^28.1.3",
+		"@types/jest-axe": "^3.5.4",
+		"@types/styled-components": "^5.1.25",
+		"@typescript-eslint/eslint-plugin": "^5.30.0",
+		"@typescript-eslint/parser": "^5.30.0",
+		"babel-loader": "^8.2.5",
+		"commitizen": "^4.2.4",
+		"cz-conventional-changelog": "^3.3.0",
+		"eslint": "^8.18.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-jest-dom": "^4.0.2",
+		"eslint-plugin-react": "^7.30.1",
+		"eslint-plugin-storybook": "^0.5.13",
+		"eslint-plugin-testing-library": "^5.5.1",
+		"husky": "^8.0.0",
+		"identity-obj-proxy": "^3.0.0",
+		"jest": "^28.1.2",
+		"jest-axe": "^6.0.0",
+		"jest-environment-jsdom": "^28.1.2",
+		"lint-staged": "^13.0.3",
+		"normalize.css": "^8.0.1",
+		"prettier": "^2.7.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-icons": "^4.4.0",
+		"rollup": "^2.75.7",
+		"rollup-plugin-typescript2": "^0.32.1",
+		"styled-components": "^5.3.5",
+		"typescript": "^4.7.4"
+	},
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
+	},
+	"lint-staged": {
+		"**/*.{js,jsx,ts,tsx}": [
+			"prettier --write",
+			"eslint --fix"
+		]
+	},
+	"dependencies": {
+		"dayjs": "^1.11.3",
+		"rollup-plugin-import-css": "^3.0.3"
+	}
 }

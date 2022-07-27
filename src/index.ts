@@ -1,6 +1,6 @@
 import {
 	ChatInput,
-	ChatRandomThemeProvider,
+	MinimThemeProvider,
 	Container,
 	Button,
 	Typography,
@@ -20,7 +20,7 @@ import {
 
 export {
 	ChatInput,
-	ChatRandomThemeProvider,
+	MinimThemeProvider,
 	Container,
 	Button,
 	Typography,
