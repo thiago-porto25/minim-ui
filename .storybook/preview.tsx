@@ -1,11 +1,13 @@
+import React from "react"
+import { MinimThemeProvider } from "../src"
+
 import "normalize.css/normalize.css"
+import "../src/theme/reset.css"
 
-// TODO: When theme is setup finish this configuration
-
-// export const decorators = [
-// 	(Story) => (
-// 		<LibThemeProvider>
-// 			<Story />
-// 		</LibThemeProvider>
-// 	),
-// ]
+export const decorators = [
+	(Story) => (
+		<MinimThemeProvider>
+			<Story />
+		</MinimThemeProvider>
+	),
+]
