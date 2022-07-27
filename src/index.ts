@@ -15,6 +15,7 @@ import {
 	PopupItem,
 	Modal,
 	ModalContent,
+	ClickableIcon,
 } from "./components"
 
 export {
@@ -34,4 +35,5 @@ export {
 	PopupItem,
 	Modal,
 	ModalContent,
+	ClickableIcon,
 }
