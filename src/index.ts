@@ -18,7 +18,10 @@ import {
 	ClickableIcon,
 } from "./components"
 
+import { GlobalAndCSSReset } from "./theme"
+
 export {
+	GlobalAndCSSReset,
 	ChatInput,
 	MinimThemeProvider,
 	Container,
