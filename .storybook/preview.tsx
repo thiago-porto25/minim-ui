@@ -1,12 +1,10 @@
 import React from "react"
-import { MinimThemeProvider } from "../src"
-
-import "normalize.css/normalize.css"
-import "../src/theme/reset.css"
+import { GlobalAndCSSReset, MinimThemeProvider } from "../src"
 
 export const decorators = [
 	(Story) => (
 		<MinimThemeProvider>
+			<GlobalAndCSSReset />
 			<Story />
 		</MinimThemeProvider>
 	),
