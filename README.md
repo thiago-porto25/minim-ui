@@ -18,19 +18,20 @@ yarn add @thiagoporto/minim-ui
 
 ## Usage
 
-In your React app, import `MinimThemeProvider` and wrap it around your `App` component. (As of now you cannot extend our default theme).
+In your React app, import `MinimThemeProvider` and wrap it around your `App` component. You must also add the `GlobalAndCSSReset` component as a sibling to your `App` component to be able to use our CSS Reset and fonts. (As of now you cannot extend our default theme).
 
 ```jsx
 // In your react entrypoint file
 import React from "react"
 import ReactDOM from "react-dom/client"
 import App from "./App"
-import { MinimThemeProvider } from "@thiagoporto/minim-ui"
+import { MinimThemeProvider, GlobalAndCSSReset } from "@thiagoporto/minim-ui"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
 	<React.StrictMode>
 		<MinimThemeProvider>
+			<GlobalAndCSSReset />
 			<App />
 		</MinimThemeProvider>
 	</React.StrictMode>
