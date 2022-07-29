@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import styled, { css } from "styled-components"
 import { ButtonProps } from "."
 import {

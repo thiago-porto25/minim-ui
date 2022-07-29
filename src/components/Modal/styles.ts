@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import styled, { css } from "styled-components"
 import { ModalContainerProps } from "."
 import { animationHelper, parseColorHelper } from "../../helpers"

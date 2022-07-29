@@ -18,7 +18,11 @@ yarn add @thiagoporto/minim-ui
 
 ## Usage
 
-In your React app, import `MinimThemeProvider` and wrap it around your `App` component. You must also add the `GlobalAndCSSReset` component as a sibling to your `App` component to be able to use our CSS Reset and fonts. (As of now you cannot extend our default theme).
+In your React app, import `MinimThemeProvider` and wrap it around your `App` component.
+
+To use our design system's fonts (Lato and Anek Latin) you must import them into your project. We recommend using [Fontsource](https://fontsource.org/) to self host these fonts, but you can also use [Google Fonts](https://fonts.google.com/).
+
+You must also add the `GlobalAndCSSReset` component as a child of our provider to be able to use our components as their are meant to be.
 
 ```jsx
 // In your react entrypoint file
@@ -27,10 +31,41 @@ import ReactDOM from "react-dom/client"
 import App from "./App"
 import { MinimThemeProvider, GlobalAndCSSReset } from "@thiagoporto/minim-ui"
 
+import "@fontsource/lato"
+import "@fontsource/anek-latin"
+
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
 	<React.StrictMode>
 		<MinimThemeProvider>
+			<GlobalAndCSSReset />
+			<App />
+		</MinimThemeProvider>
+	</React.StrictMode>
+)
+```
+
+If you'd like to use custom fonts, you can import them with either Google Fonts or Fontsource and pass their name through our provider's `customFonts` prop:
+
+```jsx
+// In your react entrypoint file
+import React from "react"
+import ReactDOM from "react-dom/client"
+import App from "./App"
+import { MinimThemeProvider, GlobalAndCSSReset } from "@thiagoporto/minim-ui"
+
+import "@fontsource/open-sans"
+import "@fontsource/roboto"
+
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(
+	<React.StrictMode>
+		<MinimThemeProvider
+			customFonts={{
+				primary: "Open Sans, sans-serif",
+				secondary: "Roboto, sans-serif",
+			}}
+		>
 			<GlobalAndCSSReset />
 			<App />
 		</MinimThemeProvider>

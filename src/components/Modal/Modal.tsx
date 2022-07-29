@@ -2,6 +2,7 @@ import React from "react"
 import { defaultObjectPropsHelper } from "../../helpers"
 import { AnimationOptions } from "../../types/animationOptions.interface"
 import { BackdropOptions } from "../../types/backdropOptions.interface"
+import { Portal } from "../Portal"
 import { ModalProps } from "./Modal.interface"
 import { ModalContainer } from "./styles"
 
@@ -36,14 +37,16 @@ export const Modal: React.FC<ModalProps> = ({
 	}
 
 	return isOpen ? (
-		<ModalContainer
-			role="dialog"
-			aria-label="modal"
-			animationOptions={newAnimationOptions}
-			backdropOptions={newBackdropOptions}
-			onClick={closeModal}
-		>
-			{children}
-		</ModalContainer>
+		<Portal>
+			<ModalContainer
+				role="dialog"
+				aria-label="modal"
+				animationOptions={newAnimationOptions}
+				backdropOptions={newBackdropOptions}
+				onClick={closeModal}
+			>
+				{children}
+			</ModalContainer>
+		</Portal>
 	) : null
 }

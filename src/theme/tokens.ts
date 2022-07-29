@@ -69,8 +69,8 @@ export const tokens = {
 			lg: "150%",
 		},
 		fontFamily: {
-			primary: "Lato", // Texts
-			secondary: " Anek Latin", // Headings
+			primary: "Lato, sans-serif", // Texts
+			secondary: " Anek Latin, sans-serif", // Headings
 		},
 		fontWeight: {
 			light: "300",

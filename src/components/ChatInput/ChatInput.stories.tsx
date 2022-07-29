@@ -23,7 +23,7 @@ Default.args = {
 export const WithText: Story<ChatInputProps> = Template.bind({})
 WithText.args = {
 	placeholder: "Message...",
-	value: "Hello World!",
+	defaultValue: "Hello World!",
 }
 
 export const Disabled: Story<ChatInputProps> = Template.bind({})
