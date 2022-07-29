@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 
 import { ToastProps } from "."
-import { ToastPortal } from "./ToastPortal"
+import { Portal } from "../Portal"
 import { CloseIcon } from "./assets/CloseIcon"
 import { ToastClose, ToastContainer, ToastMessage, ToastTitle } from "./styles"
 
@@ -38,7 +38,7 @@ export const Toast: React.FC<ToastProps> = ({
 	}, [isOpen])
 
 	return isOpen ? (
-		<ToastPortal>
+		<Portal>
 			<ToastContainer
 				role="alert"
 				type={type}
@@ -53,6 +53,6 @@ export const Toast: React.FC<ToastProps> = ({
 				<Spacer variant="stack" size={{ sm: "nn", md: "nn", lg: "nn" }} />
 				<ToastMessage>{message}</ToastMessage>
 			</ToastContainer>
-		</ToastPortal>
+		</Portal>
 	) : null
 }

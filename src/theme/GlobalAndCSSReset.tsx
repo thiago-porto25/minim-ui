@@ -206,29 +206,6 @@ export const GlobalAndCSSReset = createGlobalStyle`
   }
 
   /**
-  * Remove the inner border and padding in Firefox.
-  */
-
-  button::-moz-focus-inner,
-  [type="button"]::-moz-focus-inner,
-  [type="reset"]::-moz-focus-inner,
-  [type="submit"]::-moz-focus-inner {
-    border-style: none;
-    padding: 0;
-  }
-
-  /**
-  * Restore the focus styles unset by the previous rule.
-  */
-
-  button:-moz-focusring,
-  [type="button"]:-moz-focusring,
-  [type="reset"]:-moz-focusring,
-  [type="submit"]:-moz-focusring {
-    outline: 1px dotted ButtonText;
-  }
-
-  /**
   * Correct the padding in Firefox.
   */
 
@@ -352,6 +329,7 @@ export const GlobalAndCSSReset = createGlobalStyle`
 
   [hidden] {
     display: none;
+  }
 
   *,
   *:after,
@@ -377,5 +355,4 @@ export const GlobalAndCSSReset = createGlobalStyle`
   	font-size: 100%;
   	list-style-type: none;
   }
-}
 `

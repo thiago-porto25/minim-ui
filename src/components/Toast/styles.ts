@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import styled, { css } from "styled-components"
 import { Typography } from "../Typography"
 import { ToastContainerProps } from "."

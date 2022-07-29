@@ -49,18 +49,30 @@ describe("Typography - Styles tests", () => {
 	it("should render correctly with error textStyle", () => {
 		render(<Typography textStyle="error">{text}</Typography>)
 
-		expect(screen.getByText(text)).toHaveStyle(theme.textStyles.error)
+		expect(screen.getByText(text)).toHaveStyle({
+			fontSize: theme.textStyles.error.fontSize,
+			fontWeight: theme.textStyles.error.fontWeight,
+			lineHeight: theme.textStyles.error.lineHeight,
+		})
 	})
 
 	it("should render correctly with default (text) textStyle", () => {
 		render(<Typography>{text}</Typography>)
 
-		expect(screen.getByText(text)).toHaveStyle(theme.textStyles.text)
+		expect(screen.getByText(text)).toHaveStyle({
+			fontSize: theme.textStyles.text.fontSize,
+			fontWeight: theme.textStyles.text.fontWeight,
+			lineHeight: theme.textStyles.text.lineHeight,
+		})
 	})
 
 	it("should render correctly with inputLabel textStyle", () => {
 		render(<Typography textStyle="inputLabel">{text}</Typography>)
 
-		expect(screen.getByText(text)).toHaveStyle(theme.textStyles.inputLabel)
+		expect(screen.getByText(text)).toHaveStyle({
+			fontSize: theme.textStyles.inputLabel.fontSize,
+			fontWeight: theme.textStyles.inputLabel.fontWeight,
+			lineHeight: theme.textStyles.inputLabel.lineHeight,
+		})
 	})
 })
