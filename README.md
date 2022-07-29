@@ -4,6 +4,8 @@ Minim UI is a React Component Library for faster UI development using easy and r
 
 ## Installation
 
+<!-- TODO: UPDATE README with changes -->
+
 To install Minim UI use the package manager (npm) that comes with [nodeJS](https://nodejs.org/en/download/).
 
 ```bash
