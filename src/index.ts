@@ -20,6 +20,7 @@ import {
 } from "./components"
 
 import { GlobalAndCSSReset } from "./theme"
+import type { ThemeType, theme as minimTheme } from "./theme"
 
 export {
 	GlobalAndCSSReset,
@@ -41,4 +42,6 @@ export {
 	Modal,
 	ModalContent,
 	ClickableIcon,
+	minimTheme,
 }
+export type { ThemeType }

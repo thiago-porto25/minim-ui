@@ -354,5 +354,6 @@ export const GlobalAndCSSReset = createGlobalStyle`
   body {
   	font-size: 100%;
   	list-style-type: none;
+    font-family:${({ theme }) => theme.typography.fontFamily.primary};
   }
 `

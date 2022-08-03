@@ -1,7 +1,7 @@
 export const tokens = {
 	base: {
 		breakpoints: {
-			sm: "320px",
+			sm: "420px",
 			md: "640px",
 			lg: "1024px",
 			xl: "1312px",
