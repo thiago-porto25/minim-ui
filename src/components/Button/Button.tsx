@@ -10,16 +10,17 @@ import { rippleHelper } from "../../helpers"
 export const Button = styled.button<ButtonProps>`
 	${({
 		theme,
+		variant = "primary",
 		large = false,
 		h = large ? "md" : "sm",
 		w = "o",
 		py = "nn",
 		px = "nn",
 		radius = "md",
-		bgColor = "blue50",
-		hoverBgColor = "blue40",
-		activeBgColor = "blue30",
-		disabledBgColor = "blue50",
+		bgColor = variant === "secondary" ? "gray100" : "blue50",
+		hoverBgColor = variant === "secondary" ? "gray80" : "blue40",
+		activeBgColor = variant === "secondary" ? "gray70" : "blue30",
+		disabledBgColor = variant === "secondary" ? "gray100" : "blue50",
 		shapedByParent = false,
 		ripple = false,
 	}) => css`
