@@ -3,8 +3,8 @@ import { LoadingProps } from "."
 import { LoadingDotsContainer } from "./styles"
 
 export const Loading: React.FC<LoadingProps> = ({
-	gap = "nn",
-	size = "qk",
+	gap = { sm: "nn", md: "nn", lg: "nn" },
+	size = { sm: "qk", md: "qk", lg: "qk" },
 	dots = 4,
 }) => {
 	return (

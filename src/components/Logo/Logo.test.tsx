@@ -77,7 +77,7 @@ describe("Logo - Styles tests", () => {
 	})
 
 	it("should have correct size with size prop = xxl when it is a link", () => {
-		render(<Logo size="xxl" linkTo="#test" />)
+		render(<Logo size={{ sm: "xxl", md: "xxl", lg: "xxl" }} linkTo="#test" />)
 
 		expect(getLogo()).toHaveStyle({
 			width: theme.base.spacing.xxl,

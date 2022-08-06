@@ -91,7 +91,7 @@ describe("ClickableIcon - Style tests", () => {
 	})
 
 	it("should render correct custom size prop", () => {
-		renderClickableIcon({ size: "lg" })
+		renderClickableIcon({ size: { sm: "lg", md: "lg", lg: "lg" } })
 
 		expect(getClickableIcon()).toHaveStyle({
 			width: theme.base.spacing.lg,

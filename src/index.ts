@@ -19,7 +19,18 @@ import {
 	ClickableIcon,
 } from "./components"
 
+import {
+	ArrowIcon,
+	CloseIcon,
+	EmojiIcon,
+	GoogleIcon,
+	MoreIcon,
+	NewChatIcon,
+	SendIcon,
+} from "./icons"
+
 import { GlobalAndCSSReset } from "./theme"
+import { ThemeType, theme as minimTheme } from "./theme"
 
 export {
 	GlobalAndCSSReset,
@@ -41,4 +52,13 @@ export {
 	Modal,
 	ModalContent,
 	ClickableIcon,
+	minimTheme,
+	ArrowIcon,
+	CloseIcon,
+	EmojiIcon,
+	GoogleIcon,
+	MoreIcon,
+	NewChatIcon,
+	SendIcon,
 }
+export type { ThemeType }

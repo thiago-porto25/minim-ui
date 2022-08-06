@@ -1,5 +1,5 @@
 import { Colors } from "../../types/colors.interface"
-import { Sizes } from "../../types/sizes.interface"
+import { SizeProp } from "../../types/sizes.interface"
 
 export interface ClickableIconProps
 	extends React.HTMLAttributes<HTMLDivElement>,
@@ -7,5 +7,5 @@ export interface ClickableIconProps
 	bgColor?: Colors
 	hoverBgColor?: Colors
 	activeBgColor?: Colors
-	size?: Sizes
+	size?: SizeProp
 }

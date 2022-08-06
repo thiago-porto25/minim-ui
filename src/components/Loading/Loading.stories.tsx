@@ -33,6 +33,12 @@ Large.args = {
 	size: "xxxs",
 }
 
+export const Responsive: Story<LoadingProps> = Template.bind({})
+Responsive.args = {
+	gap: { sm: "qk", md: "xxxs", lg: "sm" },
+	size: { sm: "qk", md: "nn", lg: "xxs" },
+}
+
 export const WiderGap: Story<LoadingProps> = Template.bind({})
 WiderGap.args = {
 	gap: "xxxs",

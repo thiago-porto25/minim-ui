@@ -16,4 +16,5 @@ export interface ButtonProps
 	ripple?: boolean
 	shapedByParent?: boolean
 	w?: Sizes
+	variant?: "primary" | "secondary"
 }

@@ -25,14 +25,28 @@ const TemplateInline: Story<SpacerProps> = (args) => (
 	</div>
 )
 
-export const ControlStack = TemplateStack.bind({})
+export const ControlStack: Story<SpacerProps> = TemplateStack.bind({})
 ControlStack.args = {
 	variant: "stack",
 	size: { sm: "md", md: "md", lg: "xxxl" },
 }
 
-export const ControlInline = TemplateInline.bind({})
+export const ControlInline: Story<SpacerProps> = TemplateInline.bind({})
 ControlInline.args = {
 	variant: "inline",
-	size: { sm: "uul", md: "uul", lg: "o" },
+	size: "md",
+}
+
+export const ControlInlineStringSize: Story<SpacerProps> = TemplateInline.bind(
+	{}
+)
+ControlInlineStringSize.args = {
+	variant: "inline",
+	size: "xxl",
+}
+
+export const ControlStackObjectSize: Story<SpacerProps> = TemplateStack.bind({})
+ControlStackObjectSize.args = {
+	variant: "stack",
+	size: { sm: "md", md: "lg", lg: "ssl" },
 }

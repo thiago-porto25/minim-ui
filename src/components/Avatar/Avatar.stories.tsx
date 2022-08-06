@@ -25,11 +25,11 @@ WithSrc.args = {
 
 export const DefaultLarge: Story<AvatarProps> = Template.bind({})
 DefaultLarge.args = {
-	lgSize: "xxl",
+	size: "xxl",
 }
 
 export const WithSrcLarge: Story<AvatarProps> = Template.bind({})
 WithSrcLarge.args = {
 	src: avatarSrc,
-	lgSize: "xxl",
+	size: "xxl",
 }

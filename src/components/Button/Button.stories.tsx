@@ -23,19 +23,13 @@ Disabled.args = {
 
 export const Black: Story<ButtonProps> = Template.bind({})
 Black.args = {
-	bgColor: "gray100",
-	hoverBgColor: "gray80",
-	activeBgColor: "gray80",
-	disabledBgColor: "gray100",
+	variant: "secondary",
 	disabled: false,
 }
 
 export const BlackDisabled: Story<ButtonProps> = Template.bind({})
 BlackDisabled.args = {
-	bgColor: "gray100",
-	hoverBgColor: "gray80",
-	activeBgColor: "gray80",
-	disabledBgColor: "gray100",
+	variant: "secondary",
 	disabled: true,
 }
 
@@ -57,14 +51,17 @@ Ripple.args = {
 	ripple: true,
 }
 
+export const BlackRipple: Story<ButtonProps> = Template.bind({})
+BlackRipple.args = {
+	variant: "secondary",
+	ripple: true,
+}
+
 export const NewChat: Story<ButtonProps> = Template.bind({})
 NewChat.args = {
 	w: "uul",
 	h: "xxs",
 	py: "qk",
 	px: "xxs",
-	bgColor: "gray100",
-	disabledBgColor: "gray100",
-	hoverBgColor: "gray80",
-	activeBgColor: "gray80",
+	variant: "secondary",
 }
