@@ -1,0 +1,7 @@
+export { Arrow as ArrowIcon } from "./Arrow"
+export { Close as CloseIcon } from "./Close"
+export { Emoji as EmojiIcon } from "./Emoji"
+export { Google as GoogleIcon } from "./Google"
+export { More as MoreIcon } from "./More"
+export { NewChat as NewChatIcon } from "./NewChat"
+export { Send as SendIcon } from "./Send"
