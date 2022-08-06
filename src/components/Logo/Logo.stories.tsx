@@ -23,6 +23,11 @@ Big.args = {
 	size: "uul",
 }
 
+export const Responsive: Story<LogoProps> = Template.bind({})
+Responsive.args = {
+	size: { sm: "sm", md: "md", lg: "xxl" },
+}
+
 export const Link: Story<LogoProps> = Template.bind({})
 Link.args = {
 	linkTo: "#test",

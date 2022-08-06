@@ -1,7 +1,11 @@
 import styled, { css } from "styled-components"
 
 import { ClickableIconProps } from "."
-import { parseColorHelper, simpleTransitionHelper } from "../../helpers"
+import {
+	parseColorHelper,
+	resolveSizeOverload,
+	simpleTransitionHelper,
+} from "../../helpers"
 
 export const ClickableIcon = styled.div<ClickableIconProps>`
 	${({
@@ -9,13 +13,13 @@ export const ClickableIcon = styled.div<ClickableIconProps>`
 		bgColor = "transparent",
 		hoverBgColor = "gray20",
 		activeBgColor = "gray30",
-		size = "xs",
+		size = { sm: "xs", md: "xs", lg: "xs" },
 	}) => css`
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: ${theme.base.spacing[size]};
-		height: ${theme.base.spacing[size]};
+		width: ${theme.base.spacing[resolveSizeOverload(size).sm]};
+		height: ${theme.base.spacing[resolveSizeOverload(size).sm]};
 		padding: ${theme.base.spacing.qk};
 		background-color: ${parseColorHelper(bgColor)};
 		border-radius: ${theme.base.borderRadius.round};
@@ -37,5 +41,15 @@ export const ClickableIcon = styled.div<ClickableIconProps>`
 		}
 
 		${simpleTransitionHelper("background-color")}
+
+		@media (min-width: ${theme.base.breakpoints.md}) {
+			height: ${theme.base.spacing[resolveSizeOverload(size).md]};
+			width: ${theme.base.spacing[resolveSizeOverload(size).md]};
+		}
+
+		@media (min-width: ${theme.base.breakpoints.lg}) {
+			height: ${theme.base.spacing[resolveSizeOverload(size).lg]};
+			width: ${theme.base.spacing[resolveSizeOverload(size).lg]};
+		}
 	`}
 `
