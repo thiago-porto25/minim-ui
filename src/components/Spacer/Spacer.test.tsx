@@ -23,13 +23,7 @@ describe("Spacer - simple tests", () => {
 	})
 
 	it("should render without errors when variant props equals inline", () => {
-		render(
-			<Spacer
-				variant="inline"
-				size={{ sm: "md", md: "md", lg: "md" }}
-				data-testid="Spacer"
-			/>
-		)
+		render(<Spacer variant="inline" size="md" data-testid="Spacer" />)
 
 		expect(getSpacer()).toBeInTheDocument()
 	})
@@ -47,13 +41,7 @@ describe("Spacer - simple tests", () => {
 // --------------- STYLE TESTS ---------------
 describe("Spacer - style tests", () => {
 	it("should have correct height when prop variant equal stack", () => {
-		render(
-			<Spacer
-				variant="stack"
-				size={{ sm: "md", md: "md", lg: "md" }}
-				data-testid="Spacer"
-			/>
-		)
+		render(<Spacer variant="stack" size="md" data-testid="Spacer" />)
 
 		expect(getSpacer()).toHaveStyle({
 			height: theme.base.spacing.md,

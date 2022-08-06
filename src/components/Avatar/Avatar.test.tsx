@@ -10,9 +10,7 @@ const getAvatar = () => screen.getByRole("img")
 const renderAvatar = (props?: AvatarProps) =>
 	render(
 		<Avatar
-			lgSize={props?.lgSize || "xxs"}
-			mdSize={props?.lgSize || "xxs"}
-			smSize={props?.lgSize || "xxs"}
+			size={props?.size || "xxs"}
 			src={String(props?.src)}
 			alt="Avatar Image"
 		/>
@@ -51,7 +49,7 @@ describe("Avatar - style tests", () => {
 	})
 
 	it("should render with size lg for width and height", () => {
-		renderAvatar({ smSize: "lg", mdSize: "lg", lgSize: "lg" })
+		renderAvatar({ size: "lg" })
 
 		expect(getAvatar()).toHaveStyle({
 			height: tokens.base.spacing.lg,
@@ -60,7 +58,7 @@ describe("Avatar - style tests", () => {
 	})
 
 	it("should render with size sm for width and height", () => {
-		renderAvatar({ smSize: "sm", mdSize: "sm", lgSize: "sm" })
+		renderAvatar({ size: "sm" })
 
 		expect(getAvatar()).toHaveStyle({
 			height: tokens.base.spacing.sm,
@@ -69,7 +67,7 @@ describe("Avatar - style tests", () => {
 	})
 
 	it("should render with size md for width and height", () => {
-		renderAvatar({ smSize: "md", lgSize: "md", mdSize: "md" })
+		renderAvatar({ size: { sm: "md", md: "md", lg: "md" } })
 
 		expect(getAvatar()).toHaveStyle({
 			height: tokens.base.spacing.md,

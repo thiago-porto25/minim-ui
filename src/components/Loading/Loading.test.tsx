@@ -31,7 +31,7 @@ describe("Loading - simple tests", () => {
 	})
 
 	it("should render without errors with bigger size", () => {
-		renderLoading({ size: "xxxs" })
+		renderLoading({ size: { sm: "xxxs", md: "xxxs", lg: "xxxs" } })
 
 		expect(getLoading()).toBeInTheDocument()
 	})

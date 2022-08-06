@@ -1,6 +1,6 @@
-import { Sizes } from "../../types/sizes.interface"
+import { SizeProp } from "../../types/sizes.interface"
 
 export interface LogoProps {
-	size?: Sizes
+	size?: SizeProp
 	linkTo?: string
 }

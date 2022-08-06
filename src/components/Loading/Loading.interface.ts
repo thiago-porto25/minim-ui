@@ -1,12 +1,12 @@
-import { Sizes } from "../../types/sizes.interface"
+import { SizeProp } from "../../types/sizes.interface"
 
 export interface LoadingProps {
-	size?: Sizes
-	gap?: Sizes
+	size?: SizeProp
+	gap?: SizeProp
 	dots?: number
 }
 
 export interface LoadingDotsContainerProps {
-	size: Sizes
-	gap: Sizes
+	size: SizeProp
+	gap: SizeProp
 }
