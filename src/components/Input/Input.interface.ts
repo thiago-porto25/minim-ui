@@ -4,20 +4,20 @@ import { Sizes } from "../../types/sizes.interface"
 
 export interface InputProps
 	extends React.InputHTMLAttributes<HTMLInputElement> {
-	error?: boolean
-	shapedByParent?: boolean
-	radius?: BorderRadius
-	w?: Sizes
-	h?: Sizes
-	py?: Sizes
-	px?: Sizes
 	bgColor?: Colors
 	borderColor?: Colors
 	hoverBgColor?: Colors
 	hoverBorderColor?: Colors
+	disabledBgColor?: Colors
+	disabledBorderColor?: Colors
 	focusBgColor?: Colors
 	focusBorderColor?: Colors
 	errorBorderColor?: Colors
-	disabledBgColor?: Colors
-	disabledBorderColor?: Colors
+	error?: boolean
+	w?: Sizes
+	h?: Sizes
+	py?: Sizes
+	px?: Sizes
+	radius?: BorderRadius
+	shapedByParent?: boolean
 }

@@ -4,17 +4,17 @@ import { Sizes } from "../../types/sizes.interface"
 
 export interface ButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-	activeBgColor?: Colors
+	variant?: "primary" | "secondary"
 	bgColor?: Colors
-	disabledBgColor?: Colors
-	h?: Sizes
 	hoverBgColor?: Colors
+	disabledBgColor?: Colors
+	activeBgColor?: Colors
 	large?: boolean
+	h?: Sizes
+	w?: Sizes
 	py?: Sizes
 	px?: Sizes
 	radius?: BorderRadius
 	ripple?: boolean
 	shapedByParent?: boolean
-	w?: Sizes
-	variant?: "primary" | "secondary"
 }
