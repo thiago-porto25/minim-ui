@@ -1,3 +1,4 @@
+import React from "react"
 import styled, { css } from "styled-components"
 import { ButtonProps } from "."
 import {
@@ -6,8 +7,11 @@ import {
 	simpleTransitionHelper,
 } from "../../helpers"
 import { rippleHelper } from "../../helpers"
+import { Spinner } from "../Spinner"
 
-export const Button = styled.button<ButtonProps>`
+export const Button = styled.button.attrs((props: ButtonProps) => ({
+	children: props.isLoading ? <Spinner /> : props.children,
+}))<ButtonProps>`
 	${({
 		theme,
 		variant = "primary",
@@ -23,7 +27,11 @@ export const Button = styled.button<ButtonProps>`
 		disabledBgColor = variant === "secondary" ? "gray100" : "blue50",
 		shapedByParent = false,
 		ripple = false,
+		isLoading = false,
 	}) => css`
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		height: ${theme.base.spacing[h]};
 		width: ${theme.base.spacing[w]};
 		border-radius: ${theme.base.borderRadius[radius]};
@@ -32,6 +40,7 @@ export const Button = styled.button<ButtonProps>`
 		box-sizing: border-box;
 		border: none;
 		cursor: pointer;
+		pointer-events: ${isLoading ? "none" : "auto"};
 
 		&:hover {
 			background-color: ${parseColorHelper(hoverBgColor)};

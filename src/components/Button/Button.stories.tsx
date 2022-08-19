@@ -65,3 +65,8 @@ NewChat.args = {
 	px: "xxs",
 	variant: "secondary",
 }
+
+export const Loading: Story<ButtonProps> = Template.bind({})
+Loading.args = {
+	isLoading: true,
+}
