@@ -64,17 +64,17 @@ import "@fontsource/roboto"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
-  <React.StrictMode>
-    <MinimThemeProvider
-      customFonts={{
-	primary: "Open Sans, sans-serif",
-	secondary: "Roboto, sans-serif",
-	}}
-    >
-      <GlobalAndCSSReset />
-      <App />
-    </MinimThemeProvider>
-  </React.StrictMode>
+	<React.StrictMode>
+		<MinimThemeProvider
+			customFonts={{
+				primary: "Open Sans, sans-serif",
+				secondary: "Roboto, sans-serif",
+			}}
+		>
+			<GlobalAndCSSReset />
+			<App />
+		</MinimThemeProvider>
+	</React.StrictMode>
 )
 ```
 
@@ -86,17 +86,18 @@ After that you can start importing our components and use them in your files.
 import { Button, Typography, Spacer } from "@thiagoporto/minim-ui"
 
 export const ExampleComponent: React.FC = () => (
-  <div>
-    <Button>Hello World</Button>
-    <Spacer variant="stack" size={{ sm: "sm", md: "md", lg: "lg" }} />
-    <Typography textStyle="heading1" as="h1">
-      Hello Minim user
-    </Typography>
-  </div>
+	<div>
+		<Button>Hello World</Button>
+		<Spacer variant="stack" size={{ sm: "sm", md: "md", lg: "lg" }} />
+		<Typography textStyle="heading1" as="h1">
+			Hello Minim user
+		</Typography>
+	</div>
 )
 ```
 
 ### Intellisense with styled components
+
 You're able to use our theme with intellisense in your own styled components, all you need to do is create a `styled.d.ts` file with the follow content in your project's root directory and add it to your tsconfig.json:
 
 ```typescript
@@ -107,7 +108,7 @@ import { theme } from "@thiagoporto/minim-ui/dist/theme"
 type ThemeType = typeof theme
 
 declare module "styled-components" {
-  export interface DefaultTheme extends ThemeType {}
+	export interface DefaultTheme extends ThemeType {}
 }
 ```
 
@@ -124,6 +125,7 @@ declare module "styled-components" {
 With these changes the `theme` object in your styled components should have intellisense and typescript checking.
 
 ## Usage with Next.js
+
 If you're using this package with Next.js you may have noticed that a flash of unstyled content (FOUC) happens when loading the page. This happens because we use styled components, luckly if you follow these steps you can fix these issues.
 
 In `next.config.js` you must add the following:
@@ -133,11 +135,11 @@ In `next.config.js` you must add the following:
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // .....rest of your configuration
-  compiler: {
-    // .....rest of your configuration
-    styledComponents: true,
-  },
+	// .....rest of your configuration
+	compiler: {
+		// .....rest of your configuration
+		styledComponents: true,
+	},
 }
 
 module.exports = nextConfig
@@ -152,32 +154,52 @@ import Document, { DocumentContext } from "next/document"
 import { ServerStyleSheet } from "styled-components"
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
-    const sheet = new ServerStyleSheet()
-    const originalRenderPage = ctx.renderPage
+	static async getInitialProps(ctx: DocumentContext) {
+		const sheet = new ServerStyleSheet()
+		const originalRenderPage = ctx.renderPage
 
-    try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
-        })
+		try {
+			ctx.renderPage = () =>
+				originalRenderPage({
+					enhanceApp: (App) => (props) =>
+						sheet.collectStyles(<App {...props} />),
+				})
 
-      const initialProps = await Document.getInitialProps(ctx)
-      return {
-        ...initialProps,
-        styles: [initialProps.styles, sheet.getStyleElement()],
-      }
-    } finally {
-      sheet.seal()
-    }
-  }
+			const initialProps = await Document.getInitialProps(ctx)
+			return {
+				...initialProps,
+				styles: [initialProps.styles, sheet.getStyleElement()],
+			}
+		} finally {
+			sheet.seal()
+		}
+	}
 }
 ```
 
 After these changes our styles should render correctly.
 
 ## Components API
+
+- [Avatar](docs/Avatar.md)
+- [Button](docs/Button.md)
+- [ChatInput](docs/ChatInput.md)
+- [ClickableIcon](docs/ClickableIcon.md)
+- [Container](docs/Container.md)
+- [GlobalAndCSSReset](docs/GlobalAndCSSReset.md)
+- [Icons](docs/Icons.md)
+- [Input](docs/Input.md)
+- [Loading](docs/Loading.md)
+- [Logo](docs/Logo.md)
+- [Message](docs/Message.md)
+- [MinimThemeProvider](docs/MinimThemeProvider.md)
+- [Modal](docs/Modal.md)
+- [Popup](docs/Popup.md)
+- [Portal](docs/Portal.md)
+- [Spacer](docs/Spacer.md)
+- [Spinner](docs/Spinner.md)
+- [Toast](docs/Toast.md)
+- [Typography](docs/Typography.md)
 
 ## Future
 
