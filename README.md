@@ -4,7 +4,7 @@ Minim UI is a React Component Library for faster UI development using easy and r
 
 ## Installation
 
-To install Minim UI use the package manager (npm) that comes with [nodeJS](https://nodejs.org/en/download/).
+To install Minim UI use node package manager (npm) which comes with [nodeJS](https://nodejs.org/en/download/).
 
 ```bash
 npm install @thiagoporto/minim-ui
@@ -26,6 +26,7 @@ You must also add the `GlobalAndCSSReset` component as a child of our provider t
 
 ```jsx
 // In your react entrypoint file
+
 import React from "react"
 import ReactDOM from "react-dom/client"
 import App from "./App"
@@ -45,15 +46,19 @@ root.render(
 )
 ```
 
+### Using custom fonts
+
 If you'd like to use custom fonts, you can import them with either Google Fonts or Fontsource and pass their name through our provider's `customFonts` prop:
 
 ```jsx
 // In your react entrypoint file
+
 import React from "react"
 import ReactDOM from "react-dom/client"
 import App from "./App"
 import { MinimThemeProvider, GlobalAndCSSReset } from "@thiagoporto/minim-ui"
 
+// Don't forget to import your custom fonts here
 import "@fontsource/open-sans"
 import "@fontsource/roboto"
 
@@ -77,6 +82,7 @@ After that you can start importing our components and use them in your files.
 
 ```jsx
 // ExampleComponent.tsx
+
 import { Button, Typography, Spacer } from "@thiagoporto/minim-ui"
 
 export const ExampleComponent: React.FC = () => (
@@ -90,9 +96,114 @@ export const ExampleComponent: React.FC = () => (
 )
 ```
 
+### Intellisense with styled components
+
+You're able to use our theme with intellisense in your own styled components, all you need to do is create a `styled.d.ts` file with the follow content in your project's root directory and add it to your tsconfig.json:
+
+```typescript
+// styled.d.ts
+import "styled-components"
+import { theme } from "@thiagoporto/minim-ui/dist/theme"
+
+type ThemeType = typeof theme
+
+declare module "styled-components" {
+	export interface DefaultTheme extends ThemeType {}
+}
+```
+
+```js
+// tsconfig.json
+
+{
+  // .....rest of your configuration
+  "include": [ /*... other paths */, "styled.d.ts"],
+  // .....rest of your configuration
+}
+```
+
+With these changes the `theme` object in your styled components should have intellisense and typescript checking.
+
+## Usage with Next.js
+
+If you're using this package with Next.js you may have noticed that a flash of unstyled content (FOUC) happens when loading the page. This happens because we use styled components, luckly if you follow these steps you can fix these issues.
+
+In `next.config.js` you must add the following:
+
+```typescript
+// next.config.js
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+	// .....rest of your configuration
+	compiler: {
+		// .....rest of your configuration
+		styledComponents: true,
+	},
+}
+
+module.exports = nextConfig
+```
+
+In `pages/_document.tsx` you must add the following to render our styled-components stylesheets on the server:
+
+```typescript
+// pages/_document.tsx
+
+import Document, { DocumentContext } from "next/document"
+import { ServerStyleSheet } from "styled-components"
+
+export default class MyDocument extends Document {
+	static async getInitialProps(ctx: DocumentContext) {
+		const sheet = new ServerStyleSheet()
+		const originalRenderPage = ctx.renderPage
+
+		try {
+			ctx.renderPage = () =>
+				originalRenderPage({
+					enhanceApp: (App) => (props) =>
+						sheet.collectStyles(<App {...props} />),
+				})
+
+			const initialProps = await Document.getInitialProps(ctx)
+			return {
+				...initialProps,
+				styles: [initialProps.styles, sheet.getStyleElement()],
+			}
+		} finally {
+			sheet.seal()
+		}
+	}
+}
+```
+
+After these changes our styles should render correctly.
+
+## Components API
+
+- [Avatar](docs/Avatar.md)
+- [Button](docs/Button.md)
+- [ChatInput](docs/ChatInput.md)
+- [ClickableIcon](docs/ClickableIcon.md)
+- [Container](docs/Container.md)
+- [GlobalAndCSSReset](docs/GlobalAndCSSReset.md)
+- [Icons](docs/Icons.md)
+- [Input](docs/Input.md)
+- [Loading](docs/Loading.md)
+- [Logo](docs/Logo.md)
+- [Message](docs/Message.md)
+- [MinimThemeProvider](docs/MinimThemeProvider.md)
+- [Modal](docs/Modal.md)
+- [Popup](docs/Popup.md)
+- [Portal](docs/Portal.md)
+- [Spacer](docs/Spacer.md)
+- [Spinner](docs/Spinner.md)
+- [Toast](docs/Toast.md)
+- [Typography](docs/Typography.md)
+
 ## Future
 
-We plan to update our library in the future to support more components, support theme extension and better dev experience with some components such as our `Spacer`.
+We plan to update our library in the future to have more components and support theme extension.
 
 ## Contributing
 
