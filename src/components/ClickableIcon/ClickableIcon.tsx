@@ -7,7 +7,9 @@ import {
 	simpleTransitionHelper,
 } from "../../helpers"
 
-export const ClickableIcon = styled.div<ClickableIconProps>`
+export const ClickableIcon = styled.button.attrs(() => ({
+	"aria-label": "Clickable icon",
+}))<ClickableIconProps>`
 	${({
 		theme,
 		bgColor = "transparent",
@@ -22,6 +24,7 @@ export const ClickableIcon = styled.div<ClickableIconProps>`
 		height: ${theme.base.spacing[resolveSizeOverload(size).sm]};
 		padding: ${theme.base.spacing.qk};
 		background-color: ${parseColorHelper(bgColor)};
+		border: none;
 		border-radius: ${theme.base.borderRadius.round};
 		cursor: pointer;
 

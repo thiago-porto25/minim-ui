@@ -55,10 +55,6 @@ export const Input = styled.input<InputProps>`
 			opacity: 0.8;
 		}
 
-		&:invalid {
-			border-color: ${parseColorHelper(errorBorderColor)};
-		}
-
 		${error &&
 		css`
 			border-color: ${parseColorHelper(errorBorderColor)};

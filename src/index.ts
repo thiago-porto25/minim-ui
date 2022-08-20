@@ -17,6 +17,7 @@ import {
 	Modal,
 	ModalContent,
 	ClickableIcon,
+	Spinner,
 } from "./components"
 
 import {
@@ -60,5 +61,6 @@ export {
 	MoreIcon,
 	NewChatIcon,
 	SendIcon,
+	Spinner,
 }
 export type { ThemeType }
