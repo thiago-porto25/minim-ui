@@ -8,10 +8,10 @@ export interface ChatInputProps
 	focusBgColor?: Colors
 	hoverBgColor?: Colors
 	disabledBgColor?: Colors
-	radius?: BorderRadius
 	w?: Sizes
 	h?: Sizes
 	py?: Sizes
 	px?: Sizes
+	radius?: BorderRadius
 	shapedByParent?: boolean
 }
