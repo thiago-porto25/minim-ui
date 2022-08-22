@@ -1,4 +1,5 @@
 import React from "react"
+import FocusTrap from "focus-trap-react"
 import { defaultObjectPropsHelper } from "../../helpers"
 import { AnimationOptions } from "../../types/animationOptions.interface"
 import { BackdropOptions } from "../../types/backdropOptions.interface"
@@ -38,15 +39,17 @@ export const Modal: React.FC<ModalProps> = ({
 
 	return isOpen ? (
 		<Portal>
-			<ModalContainer
-				role="dialog"
-				aria-label="modal"
-				animationOptions={newAnimationOptions}
-				backdropOptions={newBackdropOptions}
-				onClick={closeModal}
-			>
-				{children}
-			</ModalContainer>
+			<FocusTrap>
+				<ModalContainer
+					role="dialog"
+					aria-label="modal"
+					animationOptions={newAnimationOptions}
+					backdropOptions={newBackdropOptions}
+					onClick={closeModal}
+				>
+					{children}
+				</ModalContainer>
+			</FocusTrap>
 		</Portal>
 	) : null
 }

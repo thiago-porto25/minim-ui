@@ -95,6 +95,7 @@
 		"dist"
 	],
 	"dependencies": {
-		"dayjs": "^1.11.4"
+		"dayjs": "^1.11.4",
+		"focus-trap-react": "^9.0.2"
 	}
 }
