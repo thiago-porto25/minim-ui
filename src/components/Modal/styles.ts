@@ -7,11 +7,8 @@ export const ModalContainer = styled.div<ModalContainerProps>`
 		display: flex;
 		justify-content: ${backdropOptions.justifyChildren};
 		align-items: ${backdropOptions.alignChildren};
-		position: fixed;
-		top: 0;
-		left: 0;
 		width: 100%;
-		height: 100%;
+		min-height: 100%;
 		background-color: ${backdropOptions.visible === false
 			? theme.colors.pure.transparent
 			: parseColorHelper(backdropOptions.bgColor)};
