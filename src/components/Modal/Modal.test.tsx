@@ -17,7 +17,11 @@ const MockComponent = () => {
 		<>
 			<button onClick={() => setOpen(true)}>{btnText}</button>
 			<Modal isOpen={open} close={setOpen} onClose={onClose}>
-				<ModalContent>{message}</ModalContent>
+				<ModalContent>
+					<div>
+						<button>{message}</button>
+					</div>
+				</ModalContent>
 			</Modal>
 		</>
 	)
