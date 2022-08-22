@@ -6,6 +6,12 @@ export const Portal: React.FC<PropsWithChildren> = ({ children }) => {
 
 	const container = useMemo(() => {
 		const portal = document.createElement("div")
+		portal.style.overflow = "auto"
+		portal.style.position = "fixed"
+		portal.style.left = "0"
+		portal.style.top = "0"
+		portal.style.right = "0"
+		portal.style.bottom = "0"
 		portal.id = "minim-ui-portal"
 		return portal
 	}, [])
