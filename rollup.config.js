@@ -17,5 +17,6 @@ export default {
 		"styled-components",
 		"normalize.css/normalize.css",
 		"dayjs",
+		"focus-trap-react",
 	],
 }
