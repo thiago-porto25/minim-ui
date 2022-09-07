@@ -6,3 +6,7 @@ export interface MessageProps {
 	sent?: boolean
 	bgColor?: Colors
 }
+
+export type MessageContainerProps = Pick<MessageProps, "bgColor" | "sent">
+
+export type MessageTailProps = MessageContainerProps

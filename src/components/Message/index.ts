@@ -1,2 +1,6 @@
 export { Message } from "./Message"
-export type { MessageProps } from "./Message.interface"
+export type {
+	MessageProps,
+	MessageContainerProps,
+	MessageTailProps,
+} from "./Message.interface"
