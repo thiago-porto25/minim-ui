@@ -1,15 +1,13 @@
 import styled, { css } from "styled-components"
 import { Typography } from "../Typography"
-import { MessageProps } from "."
+import { MessageContainerProps, MessageTailProps } from "."
 import { parseColorHelper } from "../../helpers"
 
-export const MessageContainer = styled.div<
-	Pick<MessageProps, "bgColor" | "sent">
->`
+export const MessageContainer = styled.div<MessageContainerProps>`
 	${({ theme, bgColor, sent }) => css`
-		position: absolute;
 		display: flex;
 		align-items: center;
+		position: relative;
 		max-width: 80%;
 		min-width: ${theme.base.spacing.sl};
 		width: fit-content;
@@ -21,12 +19,10 @@ export const MessageContainer = styled.div<
 			? css`
 					background-color: ${parseColorHelper(bgColor)};
 					border-bottom-right-radius: ${theme.base.borderRadius.none};
-					right: ${theme.base.spacing.xxxs};
 			  `
 			: css`
 					background-color: ${parseColorHelper("white")};
 					border-bottom-left-radius: ${theme.base.borderRadius.none};
-					left: ${theme.base.spacing.xxxs};
 			  `}
 
 		@media (min-width: ${theme.base.breakpoints.md}) {
@@ -44,7 +40,7 @@ export const MessageTimestamp = styled(Typography)`
 	pointer-events: none;
 `
 
-export const MessageTail = styled.div<Pick<MessageProps, "sent" | "bgColor">>`
+export const MessageTail = styled.div<MessageTailProps>`
 	${({ theme, sent, bgColor }) => css`
 		position: absolute;
 		height: 0;
